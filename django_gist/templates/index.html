@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+{% for items in gists %}
+    <div>
+        <h2>{{ items.description }}</h2>
+        <p>URL: <a href="{{ items.html_url }}">{{ items.html_url }}</a></p>
+        <p>Created at: {{ items.created_at }}</p>
+        <p>Files:</p>
+        <ul>
+        {% for file_name, file_info in items.files.items %}
+            <li>{{ file_name }} ({{ file_info.language }}) - <a href="{{ file_info.raw_url }}">View Raw</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% empty %}
+    <p>No gists found.</p>
+{% endfor %}
+</body>
+</html>

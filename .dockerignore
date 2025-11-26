@@ -1,0 +1,25 @@
+# Ignore local environment and caches
+env/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Git
+.git/
+.gitignore
+
+# Editor/project files
+.vscode/
+.DS_Store
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local SQLite DB and media (mount volumes if needed)
+db.sqlite3
+media/
+staticfiles/
